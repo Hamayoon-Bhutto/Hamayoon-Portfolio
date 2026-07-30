@@ -1,1 +1,79 @@
-const bar=document.querySelector('.progress i'),menuButton=document.querySelector('.menu'),mobileNav=document.querySelector('.mobile-nav');addEventListener('scroll',()=>{const max=document.documentElement.scrollHeight-innerHeight;bar.style.width=(scrollY/max*100)+'%'},{passive:true});menuButton.onclick=()=>{mobileNav.classList.toggle('open');menuButton.classList.toggle('open')};mobileNav.querySelectorAll('a').forEach(link=>link.onclick=()=>{mobileNav.classList.remove('open');menuButton.classList.remove('open')});const roles=['FULL STACK AI\nDEVELOPER','AI AUTOMATION\nENGINEER','INTELLIGENT SYSTEMS\nBUILDER'];let role=0;setInterval(()=>{role=(role+1)%roles.length;document.querySelector('#role').innerHTML=roles[role].replace('\n','<br>')},2600);
+document.addEventListener('DOMContentLoaded', () => {
+  // ---- Mobile Nav Toggle ----
+  const navToggle = document.getElementById('navToggle');
+  const mainNav = document.getElementById('mainNav');
+  
+  if (navToggle && mainNav) {
+    navToggle.addEventListener('click', () => {
+      const open = mainNav.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open);
+    });
+
+    mainNav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        mainNav.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', false);
+      });
+    });
+  }
+
+  // ---- Role Rotator ----
+  const roleText = document.getElementById('roleText');
+  const roles = ["FULL STACK AI", "AI AUTOMATION", "RAG & AGENT", "COGNITIVE SYSTEM"];
+  let roleIndex = 0;
+  
+  if (roleText) {
+    setInterval(() => {
+      roleIndex = (roleIndex + 1) % roles.length;
+      roleText.textContent = roles[roleIndex];
+    }, 2800);
+  }
+
+  // ---- Tech Marquee Content ----
+  const techs = [
+    ["python", "Python"], 
+    ["javascript", "JavaScript"], 
+    ["typescript", "TypeScript"],
+    ["fastapi", "FastAPI"], 
+    ["flask", "Flask"], 
+    ["nodedotjs", "Node.js"], 
+    ["react", "React"],
+    ["tailwindcss", "Tailwind CSS"], 
+    ["huggingface", "Hugging Face"], 
+    ["openai", "OpenAI"],
+    ["postgresql", "PostgreSQL"], 
+    ["firebase", "Firebase"], 
+    ["supabase", "Supabase"],
+    ["docker", "Docker"], 
+    ["googlecloud", "Google Cloud"], 
+    ["vercel", "Vercel"],
+    ["git", "Git"], 
+    ["github", "GitHub"], 
+    ["n8n", "n8n"], 
+    ["zapier", "Zapier"]
+  ];
+
+  const marquee = document.getElementById('techMarquee');
+  if (marquee) {
+    const buildRow = () => techs.map(([slug, label]) =>
+      `<span class="tech-tile" title="${label}"><img src="https://cdn.simpleicons.org/${slug}" alt="${label}" loading="lazy" onerror="this.parentElement.style.display='none'"></span>`
+    ).join('');
+    marquee.innerHTML = buildRow() + buildRow();
+  }
+
+  // ---- Scroll Reveal ----
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in-view'));
+  }
+});
