@@ -7,7 +7,7 @@
   <meta name="description" content="Hamayoon — Full Stack AI Developer building AI agents, automation and production-ready systems.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -17,10 +17,13 @@
     <div class="header-inner">
       <a class="logo" href="#top" aria-label="Hamayoon — home">
         <!-- Bat Logo Mark -->
-        <svg class="logo-mark" viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+        <svg class="logo-mark" viewBox="0 0 24 24" fill="currentColor">
           <path d="M2 4.5C4.5 4.5 7 6.5 8 9C9.5 7.5 11.5 7 12 7C12.5 7 14.5 7.5 16 9C17 6.5 19.5 4.5 22 4.5C22 8 20 12 17 13C17.5 14.5 17 18.5 12 20C7 18.5 6.5 14.5 7 13C4 12 2 8 2 4.5Z"/>
         </svg>
-        <span class="logo-text">HAMAYOON <span class="logo-sub">// AI DEV</span></span>
+        <div class="logo-text">
+          <span class="logo-main">HAMAYOON</span>
+          <span class="logo-sub">AI DEVELOPER // SE</span>
+        </div>
       </a>
 
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -28,10 +31,22 @@
       </button>
 
       <nav class="main-nav" id="mainNav">
-        <a href="#about"><span class="nav-icon">👤</span>ABOUT</a>
-        <a href="#resume"><span class="nav-icon">💼</span>RESUME</a>
-        <a href="#projects"><span class="nav-icon">📁</span>PROJECTS</a>
-        <a href="#contact"><span class="nav-icon">✉️</span>CONTACT</a>
+        <a href="#about">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          ABOUT
+        </a>
+        <a href="#resume">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+          RESUME
+        </a>
+        <a href="#projects">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+          PROJECTS
+        </a>
+        <a href="#contact">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          CONTACT
+        </a>
       </nav>
 
       <a class="status-badge" href="#contact"><span class="dot"></span>OPEN FOR WORK</a>
@@ -41,8 +56,16 @@
   <!-- ============ HERO SECTION ============ -->
   <section class="hero">
     <div class="hero-grid-bg"></div>
-    <div class="hero-decor-square" aria-hidden="true"></div>
-    <div class="hero-code-bg" aria-hidden="true">&lt; / &gt;</div>
+    <div class="hero-decor-wrap" aria-hidden="true">
+      <div class="hero-decor-square"></div>
+    </div>
+    <div class="hero-code-bg" aria-hidden="true">
+      <svg width="420" height="280" viewBox="0 0 200 130" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M 50,20 L 15,65 L 50,110" />
+        <path d="M 115,15 L 85,115" />
+        <path d="M 150,20 L 185,65 L 150,110" />
+      </svg>
+    </div>
 
     <div class="hero-inner">
       <div class="hero-top-row hero-anim d1">
@@ -52,14 +75,14 @@
 
       <h1 class="hero-name">
         <span class="line-1 hero-anim d2">HAMAYOON</span>
-        <span class="line-2 hero-anim d3">ALI.</span>
+        <span class="line-2 hero-anim d3">AI DEVELOPER.</span>
       </h1>
 
       <div class="hero-divider"></div>
 
       <div class="hero-bottom hero-anim d5">
         <div class="hero-tagline">
-          BUILDING AS A <span class="accent" id="roleText">FULL STACK AI</span> DEVELOPER<span class="cursor">_</span>
+          BUILDING AS A <span class="accent" id="roleText">FULL STACK AI DEVELOPER</span><span class="cursor">_</span>
         </div>
         <div class="hero-cta-row">
           <a class="btn btn-solid" href="#projects">VIEW SELECTED WORK</a>

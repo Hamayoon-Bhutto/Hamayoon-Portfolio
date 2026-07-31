@@ -19,14 +19,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ---- Role Rotator ----
   const roleText = document.getElementById('roleText');
-  const roles = ["FULL STACK AI", "AI AUTOMATION", "RAG & AGENT", "COGNITIVE SYSTEM"];
+  const roles = ["FULL STACK AI DEVELOPER", "AI AUTOMATION ENGINEER", "RAG & AGENT SPECIALIST", "COGNITIVE SYSTEMS BUILDER"];
   let roleIndex = 0;
   
   if (roleText) {
     setInterval(() => {
       roleIndex = (roleIndex + 1) % roles.length;
       roleText.textContent = roles[roleIndex];
-    }, 2800);
+    }, 3200);
   }
 
   // ---- Tech Marquee Content ----
