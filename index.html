@@ -309,17 +309,18 @@
   <!-- ============ INTELLIGENCE, APPLIED ============ -->
   <section class="section dark intelligence-section" id="intelligence">
     <div class="section-inner relative">
-      <div class="intel-header-flex">
-        <div>
+      <div class="intel-header-wrapper">
+        <div class="intel-header-left">
           <span class="eyebrow accent reveal d0">04 // INTELLIGENCE, APPLIED</span>
           <h2 class="section-title reveal d1" style="color:var(--cream)">INTELLIGENCE,<br>APPLIED.</h2>
+          <div class="intel-orange-line reveal-rule"></div>
         </div>
-        <p class="section-sub reveal d2" style="color:var(--cream)">
-          Custom neural systems, intelligent agents, and cognitive workflows designed to solve practical operations.
+        <p class="intel-header-sub reveal d2">
+          Local assistants, healthcare intelligence, developer tooling, and security systems built around practical AI workflows.
         </p>
       </div>
 
-      <!-- Watermark Robot Graphic -->
+      <!-- Watermark Robot Graphic (Ahmed Ayyan Style) -->
       <div class="intel-watermark" aria-hidden="true">
         <svg viewBox="0 0 120 120" fill="currentColor">
           <rect x="25" y="35" width="70" height="55" rx="10"/>
@@ -334,63 +335,155 @@
       </div>
       
       <div class="intel-grid reveal d3">
-        <!-- Project 1: Code Archaeologist -->
+        <!-- Project 1: LLaMA 3.2 Fine-Tuning -->
         <div class="intel-card">
           <div class="intel-card-body">
-            <div class="intel-card-header">
-              <span class="intel-badge">GIT &amp; LLM TOOLING</span>
-              <span class="intel-ver">V1.0</span>
+            <div class="intel-top-bar">
+              <span class="intel-num">AI // 01</span>
+              <span class="intel-sys"><span class="orange-dot">●</span> AI SYSTEM</span>
             </div>
-            <h3>CODE ARCHAEOLOGIST</h3>
-            <p>A developer tool that digs through git commit history and codebase context using LLM reasoning to explain why legacy code was written before refactoring.</p>
+            <div class="intel-divider-line"></div>
+            
+            <div class="intel-category">PARAMETER-EFFICIENT LLM FINE-TUNING</div>
+            <h3 class="intel-title">LLAMA 3.2 FINE-TUNING</h3>
+            <p class="intel-desc">Fine-tuning pipeline optimizing LLaMA 3.2 models using LoRA and QLoRA techniques for specialized domain tasks and custom instruction datasets.</p>
+
+            <div class="intel-chips">
+              <span>PYTHON</span>
+              <span>PEFT / LORA</span>
+              <span>UNSLOTH</span>
+              <span>PYTORCH</span>
+              <span>HUGGINGFACE</span>
+            </div>
+
+            <div class="intel-divider-line"></div>
+
+            <ul class="intel-bullets">
+              <li>LoRA &amp; QLoRA parameter-efficient fine-tuning on custom datasets</li>
+              <li>Reduced VRAM memory footprint with quantized 4-bit precision</li>
+              <li>Model evaluation, GGUF export, and local inference deployment</li>
+            </ul>
           </div>
-          <a class="intel-btn" href="https://github.com/Hamayoon-Bhutto/Code-Archaeologist" target="_blank" rel="noopener">
-            VIEW REPO ↗
+
+          <a class="intel-repo-btn" href="https://github.com/Hamayoon-Bhutto/Fine-Tuning-llma-3.2" target="_blank" rel="noopener">
+            <span>View repository</span>
+            <svg class="github-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
           </a>
         </div>
 
-        <!-- Project 2: Lexivoice Intake -->
+        <!-- Project 2: Code Archaeologist -->
         <div class="intel-card">
           <div class="intel-card-body">
-            <div class="intel-card-header">
-              <span class="intel-badge">VOICE AI &amp; INTAKE</span>
-              <span class="intel-ver">V1.0</span>
+            <div class="intel-top-bar">
+              <span class="intel-num">AI // 02</span>
+              <span class="intel-sys"><span class="orange-dot">●</span> AI SYSTEM</span>
             </div>
-            <h3>LEXIVOICE INTAKE</h3>
-            <p>Conversational AI voice intake system automating client consultations, lead qualification, and structured intake form generation via Retell AI and webhooks.</p>
+            <div class="intel-divider-line"></div>
+            
+            <div class="intel-category">GIT HISTORY &amp; LLM DEV TOOLING</div>
+            <h3 class="intel-title">CODE ARCHAEOLOGIST</h3>
+            <p class="intel-desc">AI developer tool that digs through git commit history and codebase context using LLM reasoning to explain why legacy code was written before refactoring.</p>
+
+            <div class="intel-chips">
+              <span>PYTHON</span>
+              <span>GIT API</span>
+              <span>OPENAI</span>
+              <span>LANGCHAIN</span>
+              <span>CLI</span>
+            </div>
+
+            <div class="intel-divider-line"></div>
+
+            <ul class="intel-bullets">
+              <li>Automated git blame and commit log graph traversal</li>
+              <li>Natural language context explanation for complex codebases</li>
+              <li>Pre-refactor risk analysis and architectural intent extraction</li>
+            </ul>
           </div>
-          <a class="intel-btn" href="https://github.com/Hamayoon-Bhutto/lexivoice-intake" target="_blank" rel="noopener">
-            VIEW REPO ↗
+
+          <a class="intel-repo-btn" href="https://github.com/Hamayoon-Bhutto/Code-Archaeologist" target="_blank" rel="noopener">
+            <span>View repository</span>
+            <svg class="github-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
           </a>
         </div>
 
-        <!-- Project 3: Ethereum Price Forecasting with ARIMA -->
+        <!-- Project 3: LexiVoice Intake -->
         <div class="intel-card">
           <div class="intel-card-body">
-            <div class="intel-card-header">
-              <span class="intel-badge">DATA SCIENCE &amp; ARIMA</span>
-              <span class="intel-ver">V1.0</span>
+            <div class="intel-top-bar">
+              <span class="intel-num">AI // 03</span>
+              <span class="intel-sys"><span class="orange-dot">●</span> AI SYSTEM</span>
             </div>
-            <h3>ETH FORECASTING (ARIMA)</h3>
-            <p>Econometric price prediction pipeline utilizing ARIMA time series models, statistical stationarity testing, and automated trend forecasting for Ethereum.</p>
+            <div class="intel-divider-line"></div>
+            
+            <div class="intel-category">CONVERSATIONAL VOICE AI SYSTEM</div>
+            <h3 class="intel-title">LEXIVOICE INTAKE</h3>
+            <p class="intel-desc">Conversational AI voice intake system automating client consultations, lead qualification, and structured intake form generation via Retell AI and webhooks.</p>
+
+            <div class="intel-chips">
+              <span>RETELL AI</span>
+              <span>TWILIO</span>
+              <span>NODE.JS</span>
+              <span>WEBHOOKS</span>
+              <span>FASTAPI</span>
+            </div>
+
+            <div class="intel-divider-line"></div>
+
+            <ul class="intel-bullets">
+              <li>Real-time voice agent call handling and client intake</li>
+              <li>Automated structured form generation from audio transcripts</li>
+              <li>Instant CRM webhook routing and appointment scheduling</li>
+            </ul>
           </div>
-          <a class="intel-btn" href="https://github.com/Hamayoon-Bhutto/Ethereum-Price-Forecasting-with-ARIMA" target="_blank" rel="noopener">
-            VIEW REPO ↗
+
+          <a class="intel-repo-btn" href="https://github.com/Hamayoon-Bhutto/lexivoice-intake" target="_blank" rel="noopener">
+            <span>View repository</span>
+            <svg class="github-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
           </a>
         </div>
 
-        <!-- Project 4: A-Eye - Jarvis -->
+        <!-- Project 4: Ethereum Price Forecasting (ARIMA) -->
         <div class="intel-card">
           <div class="intel-card-body">
-            <div class="intel-card-header">
-              <span class="intel-badge">DESKTOP AI ASSISTANT</span>
-              <span class="intel-ver">V1.0</span>
+            <div class="intel-top-bar">
+              <span class="intel-num">AI // 04</span>
+              <span class="intel-sys"><span class="orange-dot">●</span> AI SYSTEM</span>
             </div>
-            <h3>A-EYE - JARVIS</h3>
-            <p>A privacy-first desktop assistant executing terminal workflows, reading workspace files, writing code, and answering queries with local LLMs.</p>
+            <div class="intel-divider-line"></div>
+            
+            <div class="intel-category">TIME SERIES &amp; ECONOMETRIC MODELING</div>
+            <h3 class="intel-title">ETH FORECASTING (ARIMA)</h3>
+            <p class="intel-desc">Econometric price prediction pipeline utilizing ARIMA time series models, statistical stationarity testing, and automated trend forecasting for Ethereum.</p>
+
+            <div class="intel-chips">
+              <span>PYTHON</span>
+              <span>STATSMODELS</span>
+              <span>ARIMA</span>
+              <span>PANDAS</span>
+              <span>MATPLOTLIB</span>
+            </div>
+
+            <div class="intel-divider-line"></div>
+
+            <ul class="intel-bullets">
+              <li>Stationarity analysis using ADF tests and differencing pipelines</li>
+              <li>Hyperparameter grid search for optimal ARIMA (p,d,q) order selection</li>
+              <li>Out-of-sample price forecasting with confidence interval visualization</li>
+            </ul>
           </div>
-          <a class="intel-btn" href="https://github.com/Hamayoon-Bhutto" target="_blank" rel="noopener">
-            VIEW REPO ↗
+
+          <a class="intel-repo-btn" href="https://github.com/Hamayoon-Bhutto/Ethereum-Price-Forecasting-with-ARIMA" target="_blank" rel="noopener">
+            <span>View repository</span>
+            <svg class="github-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
           </a>
         </div>
       </div>
