@@ -775,34 +775,34 @@ ul {
 
 /* ================= TECH STRIP ================= */
 .tech-banner {
-  background: var(--orange);
+  background: var(--black);
   border-top: 2.5px solid var(--black);
-  border-bottom: 2.5px solid var(--black);
-  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 8px 0;
   text-align: center;
   overflow: hidden;
 }
 
 .tech-banner span {
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 700;
   letter-spacing: .22em;
-  color: var(--black);
+  color: var(--orange);
 }
 
 .tech-marquee-wrap {
   background: var(--black);
   border-bottom: 2.5px solid var(--black);
   overflow: hidden;
-  padding: 22px 0;
+  padding: 0;
 }
 
 .tech-marquee {
   display: flex;
   width: max-content;
-  gap: 14px;
-  animation: marquee 32s linear infinite;
+  gap: 0;
+  animation: marquee 35s linear infinite;
 }
 
 .tech-marquee-wrap:hover .tech-marquee {
@@ -815,21 +815,20 @@ ul {
 }
 
 .tech-tile {
-  width: 64px;
-  height: 64px;
+  width: 76px;
+  height: 70px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid rgba(241, 236, 226, 0.22);
-  background: rgba(255, 255, 255, 0.06);
-  transition: border-color .2s ease, background .2s ease, transform .2s ease;
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+  border-left: 1px solid rgba(255, 255, 255, 0.04);
+  background: transparent;
+  transition: background .2s ease, transform .2s ease;
 }
 
 .tech-tile:hover {
-  border-color: var(--orange);
-  background: rgba(238, 90, 42, 0.2);
-  transform: translateY(-3px);
+  background: rgba(238, 90, 42, 0.25);
 }
 
 .tech-tile img {
@@ -843,24 +842,91 @@ ul {
   filter: brightness(0) invert(1) drop-shadow(0px 1px 3px rgba(255, 255, 255, 0.7)) !important;
 }
 
-/* ================= STATEMENT ================= */
-.statement-text {
+/* ================= STATEMENT (BUILT UNDER PRESSURE) ================= */
+.statement-section {
+  background: #F3EEE6;
+  padding: 104px 0 94px;
+  border-bottom: 2.5px solid var(--black);
+  position: relative;
+  overflow: hidden;
+}
+
+.statement-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 340px;
+}
+
+.statement-content {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+}
+
+.statement-title {
   font-family: var(--body);
-  font-weight: 700;
-  font-size: clamp(1.5rem, 3.6vw, 2.6rem);
-  line-height: 1.28;
-  max-width: 900px;
-  margin: 22px 0 30px;
+  font-weight: 800;
+  font-size: clamp(2rem, 4.3vw, 3.35rem);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  margin: 18px 0 28px;
   color: var(--black);
 }
 
 .statement-sub {
   font-family: var(--body);
   font-weight: 700;
-  font-size: clamp(1.1rem, 2.2vw, 1.5rem);
-  line-height: 1.5;
-  max-width: 520px;
-  color: var(--orange);
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  line-height: 1.45;
+  max-width: 580px;
+  color: #D24F2B;
+}
+
+.tea-graphic {
+  position: absolute;
+  right: 35px;
+  top: 50%;
+  transform: translateY(-45%);
+  width: 380px;
+  height: 380px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.tea-graphic svg {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+}
+
+@media (max-width: 960px) {
+  .statement-inner {
+    min-height: auto;
+  }
+  .tea-graphic {
+    width: 260px;
+    height: 260px;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.45;
+  }
+}
+
+@media (max-width: 640px) {
+  .statement-section {
+    padding: 68px 0;
+  }
+  .tea-graphic {
+    width: 200px;
+    height: 200px;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.25;
+  }
 }
 
 /* ================= RESUME / PROFILE ================= */

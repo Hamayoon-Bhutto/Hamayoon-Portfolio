@@ -31,26 +31,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ---- Tech Marquee Content ----
   const techs = [
-    { slug: "python", label: "Python" }, 
-    { slug: "javascript", label: "JavaScript" }, 
-    { slug: "typescript", label: "TypeScript" },
-    { slug: "fastapi", label: "FastAPI" }, 
-    { slug: "flask", label: "Flask", invert: true }, 
-    { slug: "nodedotjs", label: "Node.js" }, 
+    { slug: "html5", label: "HTML5" },
+    { slug: "css3", label: "CSS3" },
+    { slug: "javascript", label: "JavaScript" },
     { slug: "react", label: "React" },
-    { slug: "tailwindcss", label: "Tailwind CSS" }, 
-    { slug: "huggingface", label: "Hugging Face" }, 
-    { slug: "openai", label: "OpenAI", invert: true },
-    { slug: "postgresql", label: "PostgreSQL" }, 
-    { slug: "firebase", label: "Firebase" }, 
-    { slug: "supabase", label: "Supabase" },
-    { slug: "docker", label: "Docker" }, 
-    { slug: "googlecloud", label: "Google Cloud" }, 
-    { slug: "vercel", label: "Vercel", invert: true },
-    { slug: "git", label: "Git" }, 
-    { slug: "github", label: "GitHub", invert: true }, 
-    { slug: "n8n", label: "n8n" }, 
-    { slug: "zapier", label: "Zapier" }
+    { slug: "angular", label: "Angular" },
+    { slug: "bootstrap", label: "Bootstrap" },
+    { slug: "nodedotjs", label: "Node.js" },
+    { slug: "php", label: "PHP" },
+    { slug: "postgresql", label: "PostgreSQL" },
+    { slug: "wordpress", label: "WordPress" },
+    { slug: "shopify", label: "Shopify" },
+    { slug: "gatsby", label: "Gatsby" },
+    { slug: "vite", label: "Vite" },
+    { slug: "github", label: "GitHub", invert: true },
+    { slug: "figma", label: "Figma" },
+    { slug: "python", label: "Python" },
+    { slug: "npm", label: "npm" },
+    { slug: "fastapi", label: "FastAPI" },
+    { slug: "docker", label: "Docker" },
+    { slug: "n8n", label: "n8n" }
   ];
 
   const marquee = document.getElementById('techMarquee');
