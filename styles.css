@@ -929,6 +929,165 @@ ul {
   }
 }
 
+/* ================= WORK EXPERIENCE SECTION ================= */
+.work-exp-section {
+  background: #F3EEE6;
+  padding: 104px 0;
+  border-bottom: 2.5px solid var(--black);
+}
+
+.work-exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin-bottom: 56px;
+}
+
+.work-exp-header-left {
+  flex: 1;
+  min-width: 320px;
+}
+
+.work-exp-header-sub {
+  font-family: var(--body);
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(17, 17, 15, 0.75);
+  max-width: 380px;
+  padding-top: 28px;
+}
+
+.work-exp-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.work-exp-item {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+@media (max-width: 840px) {
+  .work-exp-item {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.work-exp-date-col {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding-top: 4px;
+}
+
+.work-dot {
+  color: var(--orange);
+  font-size: 18px;
+  line-height: 1;
+}
+
+.work-dot.muted {
+  color: var(--black);
+  opacity: 0.4;
+}
+
+.work-date-text {
+  font-family: var(--mono);
+  font-size: 17px;
+  font-weight: 700;
+  color: rgba(17, 17, 15, 0.85);
+  line-height: 1.35;
+}
+
+.work-exp-card {
+  background: #FFFDF8;
+  border: 2px solid var(--black);
+  box-shadow: 5px 5px 0 var(--black);
+  padding: 28px 32px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.work-exp-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 var(--orange);
+}
+
+.work-card-top {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 18px;
+}
+
+.work-company {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: rgba(17, 17, 15, 0.55);
+  letter-spacing: 0.04em;
+  display: block;
+}
+
+.work-role {
+  font-family: var(--display);
+  font-size: clamp(20px, 2.2vw, 24px);
+  font-weight: 800;
+  color: var(--black);
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.work-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.work-bullets li {
+  font-family: var(--body);
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: rgba(17, 17, 15, 0.85);
+  position: relative;
+  padding-left: 18px;
+}
+
+.work-bullets li::before {
+  content: "▪";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--orange);
+  font-size: 12px;
+}
+
+.work-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.work-chips span {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  background: var(--black);
+  color: var(--white);
+  padding: 5px 10px;
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+
 /* ================= RESUME / PROFILE ================= */
 .resume-card {
   margin-top: 44px;
@@ -1510,19 +1669,26 @@ ul {
 }
 
 .project-visual {
-  height: 160px;
+  height: 220px;
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   border-bottom: 2.5px solid var(--black);
+  background: var(--black);
 }
 
-.project-visual svg {
-  width: 64px;
-  height: 64px;
-  opacity: .9;
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.35s ease;
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.05);
 }
 
 .project-body {
