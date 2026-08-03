@@ -401,27 +401,35 @@ ul {
   position: relative;
   overflow: hidden;
   border-bottom: 3px solid var(--ink-black);
-  min-height: 580px;
-  padding: 64px 0 56px;
+  min-height: calc(100vh - 85px);
+  height: calc(100vh - 85px);
+  padding: 48px 0 44px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
   background: var(--bg-cream);
 }
 
 .hero-grid-bg {
   position: absolute;
   inset: 0;
-  background-image:
-    repeating-linear-gradient(90deg, var(--grid-line) 0 1px, transparent 1px 90px),
-    repeating-linear-gradient(0deg, var(--grid-line) 0 1px, transparent 1px 90px);
-  pointer-events: none;
-  opacity: 0;
-  animation: gridFade 1.4s ease forwards;
+  pointer-events: auto;
+  z-index: 0;
+  overflow: hidden;
+}
+
+#heroGridCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .hero-decor-wrap {
   position: absolute;
-  top: 120px;
+  top: 100px;
   right: 70px;
   width: 56px;
   height: 56px;
@@ -460,6 +468,11 @@ ul {
   padding: 0 32px;
   width: 100%;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  flex: 1;
 }
 
 .hero-top-row {
@@ -808,21 +821,26 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid rgba(236, 231, 218, .22);
-  background: rgba(236, 231, 218, .03);
+  border: 2px solid rgba(241, 236, 226, 0.22);
+  background: rgba(255, 255, 255, 0.06);
   transition: border-color .2s ease, background .2s ease, transform .2s ease;
 }
 
 .tech-tile:hover {
   border-color: var(--orange);
-  background: rgba(222, 77, 44, .1);
+  background: rgba(238, 90, 42, 0.2);
   transform: translateY(-3px);
 }
 
 .tech-tile img {
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   object-fit: contain;
+  filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.5));
+}
+
+.tech-tile img.icon-white {
+  filter: brightness(0) invert(1) drop-shadow(0px 1px 3px rgba(255, 255, 255, 0.7)) !important;
 }
 
 /* ================= STATEMENT ================= */
