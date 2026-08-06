@@ -760,6 +760,126 @@
     </div>
   </footer>
 
+  <!-- ============ CUTE ROBOT AI CHATBOT ASSISTANT ============ -->
+  <div id="aiChatbotWidget" class="ai-chatbot-widget">
+    <!-- Floating Cute Robot Trigger Button -->
+    <button id="chatbotTrigger" class="chatbot-trigger" aria-label="Open AI Assistant Chatbot">
+      <div class="robot-avatar-wrapper">
+        <svg class="robot-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Antenna -->
+          <line x1="50" y1="22" x2="50" y2="10" stroke="#11110F" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="50" cy="8" r="5" fill="#EE5A2A" class="antenna-bulb"/>
+          
+          <!-- Ears -->
+          <rect x="14" y="40" width="8" height="16" rx="3" fill="#11110F"/>
+          <rect x="78" y="40" width="8" height="16" rx="3" fill="#11110F"/>
+          <circle cx="18" cy="48" r="2" fill="#EE5A2A"/>
+          <circle cx="82" cy="48" r="2" fill="#EE5A2A"/>
+
+          <!-- Robot Head Container -->
+          <rect x="20" y="20" width="60" height="54" rx="14" fill="#F4EFE6" stroke="#11110F" stroke-width="4"/>
+
+          <!-- Screen Face -->
+          <rect x="27" y="27" width="46" height="34" rx="8" fill="#11110F"/>
+
+          <!-- Eyes -->
+          <circle cx="39" cy="42" r="5" fill="#EE5A2A" class="robot-eye left-eye"/>
+          <circle cx="61" cy="42" r="5" fill="#EE5A2A" class="robot-eye right-eye"/>
+
+          <!-- Eye Shine -->
+          <circle cx="41" cy="40" r="1.5" fill="#FFFFFF"/>
+          <circle cx="63" cy="40" r="1.5" fill="#FFFFFF"/>
+
+          <!-- Cute Mouth -->
+          <path d="M 42 52 Q 50 57 58 52" stroke="#EE5A2A" stroke-width="3" stroke-linecap="round" fill="none"/>
+
+          <!-- Body / Shoulders -->
+          <path d="M 28 74 C 28 74, 34 92, 50 92 C 66 92, 72 74, 72 74 Z" fill="#EE5A2A" stroke="#11110F" stroke-width="4"/>
+          <rect x="42" y="78" width="16" height="8" rx="2" fill="#F4EFE6"/>
+        </svg>
+        <span class="online-indicator"></span>
+      </div>
+      <div class="chatbot-tooltip">
+        <span class="tooltip-text">Ask AI Assistant 👋</span>
+      </div>
+    </button>
+
+    <!-- Chatbot Window Panel -->
+    <div id="chatbotWindow" class="chatbot-window" aria-hidden="true">
+      <!-- Window Header -->
+      <div class="chatbot-header">
+        <div class="chatbot-header-info">
+          <div class="mini-robot-head">
+            <svg viewBox="0 0 100 100" fill="none">
+              <rect x="20" y="20" width="60" height="54" rx="14" fill="#EE5A2A" stroke="#11110F" stroke-width="6"/>
+              <rect x="27" y="27" width="46" height="34" rx="8" fill="#11110F"/>
+              <circle cx="39" cy="42" r="5" fill="#F4EFE6"/>
+              <circle cx="61" cy="42" r="5" fill="#F4EFE6"/>
+              <path d="M 42 52 Q 50 56 58 52" stroke="#F4EFE6" stroke-width="3" stroke-linecap="round" fill="none"/>
+            </svg>
+          </div>
+          <div>
+            <div class="chatbot-title">HY-BOT // AI ASSISTANT</div>
+            <div class="chatbot-status"><span class="status-dot"></span>KNOWLEDGE ENGINE ACTIVE</div>
+          </div>
+        </div>
+        <div class="chatbot-header-actions">
+          <button id="ttsToggleBtn" class="header-icon-btn" title="Toggle Voice Response (TTS)" aria-label="Toggle Voice Response">
+            <svg id="ttsIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" id="soundWaves"></path>
+            </svg>
+          </button>
+          <button id="clearChatBtn" class="header-icon-btn" title="Clear Chat History" aria-label="Clear Chat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="3 6 5 6 21 6"></polyline>
+              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+            </svg>
+          </button>
+          <button id="closeChatbotBtn" class="header-icon-btn close-btn" title="Close Assistant" aria-label="Close Assistant">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Messages Stream -->
+      <div id="chatMessages" class="chatbot-messages">
+        <!-- Initial welcome message added dynamically by JS -->
+      </div>
+
+      <!-- Quick Action Prompt Chips -->
+      <div id="chatQuickPrompts" class="chatbot-quick-prompts">
+        <button class="prompt-chip" data-prompt="Who is Hamayoon?">👤 Who is Hamayoon?</button>
+        <button class="prompt-chip" data-prompt="What projects has he built?">⚡ Projects & RAG</button>
+        <button class="prompt-chip" data-prompt="What services does he offer?">🛠️ Services Offered</button>
+        <button class="prompt-chip" data-prompt="What tech stack does he use?">💻 Tech Stack</button>
+        <button class="prompt-chip" data-prompt="How can I contact or hire him?">📬 Contact & CV</button>
+      </div>
+
+      <!-- Input Form Footer -->
+      <form id="chatForm" class="chatbot-input-form" autocomplete="off">
+        <button type="button" id="micBtn" class="mic-btn" title="Voice Input (Speech-to-Text)" aria-label="Voice Input">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+            <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+            <line x1="12" y1="19" x2="12" y2="23"></line>
+            <line x1="8" y1="23" x2="16" y2="23"></line>
+          </svg>
+        </button>
+        <input type="text" id="chatInput" class="chat-input" placeholder="Ask anything about Hamayoon..." aria-label="Type your message">
+        <button type="submit" id="sendBtn" class="send-btn" aria-label="Send Message">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
