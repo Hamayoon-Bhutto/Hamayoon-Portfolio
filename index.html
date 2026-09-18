@@ -18,7 +18,7 @@
     <button class="hero-menu-btn" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-menu"><span></span><span></span></button>
   </header>
 
-  <section class="hero-black" id="hero">
+  <section class="hero-black" id="hero" data-header="dark">
     <p class="hero-title">HAMAYOON ALI</p>
 
     <div class="hero-portrait-stage">
@@ -27,10 +27,11 @@
     </div>
 
     <div class="hero-role-wrap">
-      <h1 class="sr-only">AI Systems Engineer</h1>
+      <h1 class="sr-only">Full-Stack Developer</h1>
       <div class="hero-role-track" aria-hidden="true">
-        <span class="hero-role is-active" data-role="1">AI Systems Engineer</span>
-        <span class="hero-role" data-role="2">Full-Stack Engineer</span>
+        <span class="hero-role is-active" data-role="1">Full-Stack Developer</span>
+        <span class="hero-role" data-role="2">AI Systems Engineer</span>
+        <span class="hero-role" data-role="3">Automation Engineer</span>
       </div>
     </div>
   </section>
@@ -41,17 +42,83 @@
       <p class="menu-eyebrow">NAVIGATE / HAMAYOON ALI</p>
       <nav>
         <a href="#top"><small>01</small>Home<span>↗</span></a>
-        <a href="#about"><small>02</small>About<span>↗</span></a>
-        <a href="#resume"><small>03</small>Resume<span>↗</span></a>
-        <a href="#projects"><small>04</small>Projects<span>↗</span></a>
-        <a href="#contact"><small>05</small>Contact<span>↗</span></a>
+        <a href="#services"><small>02</small>Services<span>↗</span></a>
+        <a href="#about"><small>03</small>About<span>↗</span></a>
+        <a href="#resume"><small>04</small>Resume<span>↗</span></a>
+        <a href="#projects"><small>05</small>Projects<span>↗</span></a>
+        <a href="#contact"><small>06</small>Contact<span>↗</span></a>
       </nav>
       <a class="menu-email" href="mailto:hamayoonaliai@gmail.com">hamayoonaliai@gmail.com ↗</a>
     </div>
   </dialog>
 
+  <!-- ============ HOW I HELP SECTION ============ -->
+  <section class="intro-panel" id="how-i-help" aria-labelledby="intro-panel-heading" data-header="light">
+    <p class="intro-label">HOW I HELP BUSINESSES</p>
+    <p class="intro-index" aria-hidden="true">(01)</p>
+
+    <div class="intro-portrait" id="introPortrait" role="img" aria-label="Portrait of Hamayoon Ali">
+      <div class="intro-tiles" aria-hidden="true"></div>
+    </div>
+
+    <svg class="intro-geo" viewBox="0 0 800 400" aria-hidden="true" focusable="false">
+      <circle cx="400" cy="200" r="160" />
+      <circle cx="400" cy="200" r="230" />
+      <polygon points="400,60 540,280 260,280" />
+      <line x1="90" y1="200" x2="710" y2="200" />
+    </svg>
+
+    <h2 id="intro-panel-heading" class="intro-copy">
+      I build end-to-end web apps, SaaS platforms, and AI-powered products from polished frontends and scalable backends to LLM integrations and intelligent AI agents. I focus on shipping quickly without compromising quality, with clean code, clear communication, and reliable products built to perform long after launch.
+    </h2>
+  </section>
+
+  <!-- ============ SERVICES SECTION ============ -->
+  <section class="services-panel" id="services" aria-labelledby="services-heading" data-header="dark">
+    <h2 id="services-heading" class="services-title"><span class="services-title-strong">Services</span> <span class="services-title-light">I offer.</span></h2>
+
+    <div class="services-stage">
+      <div class="services-portrait" aria-hidden="true">
+        <img src="assets/hamayoon-cutout.png" alt="" width="1254" height="1155">
+      </div>
+
+      <div class="services-list">
+        <article class="service-card is-active" data-color="cyan">
+          <p class="service-index" aria-hidden="true">01 /</p>
+          <h3 class="service-label"><span>AI Product Engineering</span></h3>
+          <p class="service-desc"><span>From first idea to production launch, I build AI-powered products — RAG systems, autonomous agents, and intelligent tools that create real value for your business.</span></p>
+          <ul class="service-tags"><li>AI Agents</li><li>RAG</li><li>LangGraph</li><li>LLMs</li></ul>
+        </article>
+        <article class="service-card" data-color="green">
+          <p class="service-index" aria-hidden="true">02 /</p>
+          <h3 class="service-label"><span>Intelligent Automation</span></h3>
+          <p class="service-desc"><span>Turn repetitive operations into reliable AI-powered workflows. I connect your tools, data, and teams to remove manual bottlenecks and save hours every week.</span></p>
+          <ul class="service-tags"><li>n8n</li><li>Workflows</li><li>APIs</li><li>Automation</li></ul>
+        </article>
+        <article class="service-card" data-color="pink">
+          <p class="service-index" aria-hidden="true">03 /</p>
+          <h3 class="service-label"><span>MVPs, Shipped Fast</span></h3>
+          <p class="service-desc"><span>Move from idea to a launch-ready product in weeks, not months. I build focused MVPs that help you validate demand, impress investors, and establish a strong foundation for growth.</span></p>
+          <ul class="service-tags"><li>Full-Stack</li><li>SaaS</li><li>Rapid Delivery</li><li>Product Strategy</li></ul>
+        </article>
+        <article class="service-card" data-color="orange">
+          <p class="service-index" aria-hidden="true">04 /</p>
+          <h3 class="service-label"><span>Scalable Web Platforms</span></h3>
+          <p class="service-desc"><span>Fast, secure web platforms engineered for growth. From customer-facing SaaS products to internal tools, every build is designed with clean architecture and room to scale.</span></p>
+          <ul class="service-tags"><li>FastAPI</li><li>Cloud</li><li>APIs</li><li>Performance</li></ul>
+        </article>
+        <article class="service-card" data-color="purple">
+          <p class="service-index" aria-hidden="true">05 /</p>
+          <h3 class="service-label"><span>AI Agents &amp; RAG Systems</span></h3>
+          <p class="service-desc"><span>I build production-ready AI agents and retrieval systems that reason over your data and take real action, not just chatbots that answer questions.</span></p>
+          <ul class="service-tags"><li>RAG</li><li>Agents</li><li>LLMs</li><li>Vector DBs</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ ABOUT SECTION ============ -->
-  <section class="section about-section" id="about">
+  <section class="section about-section" id="about" data-header="light">
     <div class="section-inner">
       <span class="eyebrow reveal d0">01 // PROFILE</span>
       <h2 class="section-title reveal d1">ABOUT</h2>
@@ -95,7 +162,7 @@
   </div>
 
   <!-- ============ STATEMENT ============ -->
-  <section class="section statement-section" id="built">
+  <section class="section statement-section" id="built" data-header="light">
     <div class="section-inner statement-inner">
       <div class="statement-content">
         <span class="eyebrow accent reveal d0">02 // BUILT UNDER PRESSURE</span>
@@ -124,7 +191,7 @@
   </section>
 
   <!-- ============ WORK EXPERIENCE SECTION ============ -->
-  <section class="section work-exp-section" id="experience">
+  <section class="section work-exp-section" id="experience" data-header="light">
     <div class="section-inner">
       <div class="work-exp-header">
         <div class="work-exp-header-left">
@@ -171,7 +238,7 @@
   </section>
 
   <!-- ============ ENGINEERING PROFILE (RESUME) ============ -->
-  <section class="section" id="resume">
+  <section class="section" id="resume" data-header="light">
     <div class="section-inner">
       <div class="resume-header-layout reveal">
         <div class="resume-header-left">
@@ -328,7 +395,7 @@
   </section>
 
   <!-- ============ HORIZONTAL TICKER BAR ============ -->
-  <section class="role-ticker-bar">
+  <section class="role-ticker-bar" data-header="dark">
     <div class="role-ticker-track">
       <span>✦ FULL STACK AI DEVELOPER </span>
       <span>✦ AI AUTOMATION ENGINEER </span>
@@ -344,7 +411,7 @@
   </section>
 
   <!-- ============ INTELLIGENCE, APPLIED ============ -->
-  <section class="section dark intelligence-section" id="intelligence">
+  <section class="section dark intelligence-section" id="intelligence" data-header="dark">
     <div class="section-inner relative">
       <div class="intel-header-wrapper">
         <div class="intel-header-left">
@@ -528,7 +595,7 @@
   </section>
 
   <!-- ============ FEATURED PROJECTS ============ -->
-  <section class="section" id="projects">
+  <section class="section" id="projects" data-header="light">
     <div class="section-inner">
       <span class="eyebrow reveal">05 // SELECTED WORK</span>
       <h2 class="section-title reveal">FEATURED<br>PROJECTS</h2>
@@ -606,7 +673,7 @@
   </section>
 
   <!-- ============ GET IN TOUCH ============ -->
-  <section class="section" id="contact">
+  <section class="section" id="contact" data-header="light">
     <div class="section-inner">
       <div class="contact-header-layout reveal">
         <div class="contact-header-left">
@@ -666,7 +733,7 @@
   </section>
 
   <!-- ============ FOOTER ============ -->
-  <footer class="site-footer">
+  <footer class="site-footer" data-header="dark">
     <div class="footer-inner">
       <div class="footer-cta-container reveal">
         <span class="footer-eyebrow">LET'S COLLABORATE</span>

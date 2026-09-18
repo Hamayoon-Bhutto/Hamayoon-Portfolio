@@ -35,6 +35,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const heroRoles = [...document.querySelectorAll('.hero-role')];
   const heroHeading = document.querySelector('.hero-black h1');
 
+  if (heroReducedMotion.matches && heroRoles.length > 1) {
+    const staticRole = heroRoles.find(r => r.textContent.trim() === 'AI Systems Engineer') || heroRoles[0];
+    heroRoles.forEach(r => r.classList.toggle('is-active', r === staticRole));
+    if (heroHeading) heroHeading.textContent = staticRole.textContent;
+  }
+
   if (!heroReducedMotion.matches && heroRoles.length > 1) {
     const HERO_HOLD = 4000;
     const HERO_EXIT = 280;
@@ -73,6 +79,147 @@ document.addEventListener('DOMContentLoaded', () => {
 
     scheduleHeroRole();
   }
+
+  // ---- Persistent header: light/dark swap based on whatever section sits behind it ----
+  const heroNav = document.querySelector('.hero-nav');
+  if (heroNav) {
+    const themedSections = [...document.querySelectorAll('[data-header]')];
+    const sampleHeaderMode = () => {
+      const y = heroNav.getBoundingClientRect().height + 2;
+      let mode = 'dark';
+      for (const section of themedSections) {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= y && rect.bottom > y) { mode = section.dataset.header; break; }
+      }
+      heroNav.classList.toggle('is-light', mode === 'light');
+    };
+    let headerTicking = false;
+    window.addEventListener('scroll', () => {
+      if (headerTicking) return;
+      headerTicking = true;
+      window.requestAnimationFrame(() => { sampleHeaderMode(); headerTicking = false; });
+    }, { passive: true });
+    window.addEventListener('resize', sampleHeaderMode);
+    sampleHeaderMode();
+  }
+
+  // ---- Intro panel: deterministic mosaic portrait reveal + paragraph reveal ----
+  (() => {
+    const panel = document.getElementById('how-i-help');
+    const tilesWrap = document.querySelector('.intro-tiles');
+    if (!panel || !tilesWrap) return;
+
+    // Irregular, deterministic grid: [left, top, width, height] as fractions of the portrait.
+    const GRID = [
+      [0, 0, .35, .18], [.35, 0, .33, .18], [.68, 0, .32, .18],
+      [0, .18, .25, .22], [.25, .18, .25, .22], [.5, .18, .25, .22], [.75, .18, .25, .22],
+      [0, .40, .4, .22], [.4, .40, .3, .22], [.7, .40, .3, .22],
+      [0, .62, .3, .20], [.3, .62, .35, .20], [.65, .62, .35, .20],
+      [0, .82, .5, .18], [.5, .82, .5, .18]
+    ];
+    // Deterministic scatter offsets (px), roughly pointing outward from center.
+    const OFFSETS = [
+      [-46, -58], [6, -64], [52, -56],
+      [-58, -30], [-18, -34], [20, -32], [60, -28],
+      [-52, 6], [4, 10], [50, 4],
+      [-42, 34], [8, 40], [46, 32],
+      [-34, 54], [36, 50]
+    ];
+    // Deterministic but shuffled delay ranks so tiles converge as a scatter
+    // rather than a strict top-to-bottom wipe.
+    const DELAY_ORDER = [0, 7, 3, 11, 1, 9, 5, 13, 2, 8, 4, 12, 6, 10, 14];
+    const PORTRAIT_SRC = 'assets/hamayoon-cutout.png';
+    const STAGGER_MS = 40;
+    const OVERLAP_PX = 1;
+
+    tilesWrap.innerHTML = '';
+    GRID.forEach(([l, t, w, h], i) => {
+      const tile = document.createElement('div');
+      tile.className = 'intro-tile';
+      tile.style.left = `calc(${l * 100}% - ${OVERLAP_PX}px)`;
+      tile.style.top = `calc(${t * 100}% - ${OVERLAP_PX}px)`;
+      tile.style.width = `calc(${w * 100}% + ${OVERLAP_PX * 2}px)`;
+      tile.style.height = `calc(${h * 100}% + ${OVERLAP_PX * 2}px)`;
+      tile.style.backgroundImage = `url(${PORTRAIT_SRC})`;
+      tile.style.backgroundSize = `${(1 / w) * 100}% ${(1 / h) * 100}%`;
+      tile.style.backgroundPosition = `${w < 1 ? (l / (1 - w)) * 100 : 0}% ${h < 1 ? (t / (1 - h)) * 100 : 0}%`;
+      const [dx, dy] = OFFSETS[i];
+      tile.style.setProperty('--dx', `${dx}px`);
+      tile.style.setProperty('--dy', `${dy}px`);
+      tile.style.setProperty('--delay', `${DELAY_ORDER[i] * STAGGER_MS}ms`);
+      tilesWrap.appendChild(tile);
+    });
+
+    const introReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (introReducedMotion.matches) {
+      panel.classList.add('in-view', 'copy-in');
+      tilesWrap.classList.add('revealed');
+      return;
+    }
+
+    const TILES_DELAY = 350;
+    const TILES_SETTLE = GRID.length * STAGGER_MS + 800;
+    const COPY_DELAY = TILES_DELAY + TILES_SETTLE + 150;
+
+    const runReveal = () => {
+      panel.classList.add('in-view');
+      window.setTimeout(() => tilesWrap.classList.add('revealed'), TILES_DELAY);
+      window.setTimeout(() => panel.classList.add('copy-in'), COPY_DELAY);
+    };
+
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          runReveal();
+          io.unobserve(panel);
+        }
+      }, { threshold: 0.25 });
+      io.observe(panel);
+    } else {
+      runReveal();
+    }
+  })();
+
+  // ---- Services: rotating highlighted service cards ----
+  (() => {
+    const cards = [...document.querySelectorAll('.service-card')];
+    if (cards.length < 2) return;
+
+    if (heroReducedMotion.matches) return; // first card's default .is-active state is enough
+
+    const HOLD_MS = 3200;
+    let index = 0;
+    let timer = null;
+    let tabVisible = true;
+    let onScreen = true;
+
+    const advance = () => {
+      cards[index].classList.remove('is-active');
+      index = (index + 1) % cards.length;
+      cards[index].classList.add('is-active');
+      schedule();
+    };
+
+    const schedule = () => {
+      window.clearTimeout(timer);
+      if (tabVisible && onScreen) timer = window.setTimeout(advance, HOLD_MS);
+    };
+
+    document.addEventListener('visibilitychange', () => {
+      tabVisible = !document.hidden;
+      schedule();
+    });
+
+    const panel = document.getElementById('services');
+    if (panel && 'IntersectionObserver' in window) {
+      new IntersectionObserver(entries => {
+        onScreen = entries[0].isIntersecting;
+        schedule();
+      }, { threshold: 0.15 }).observe(panel);
+    }
+
+    schedule();
+  })();
 
   // ---- Tech Marquee Content ----
   const techs = [
